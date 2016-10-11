@@ -1,0 +1,11 @@
+@media screen and (min-width: 801px){
+	body{
+		text-align: center;
+	}
+	h1{
+		font-size: 42px;
+	}
+	h2{
+		font-size: 31px;
+	}
+}
