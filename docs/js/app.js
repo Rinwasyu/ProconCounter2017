@@ -2,6 +2,9 @@ var daysText=document.getElementById('days-text');
 var hourText=document.getElementById('hour-text');
 var minText=document.getElementById('min-text');
 var secText=document.getElementById('sec-text');
+var progressText=document.getElementById('your-progress');
+var progressString='How is your progressing?';
+var progressStringLength=progressString.length;
 
 var isAnime=false;
 
@@ -42,6 +45,7 @@ setInterval(function () {
 		animeNumber(hourText,hour);
 		animeNumber(minText,min);
 		animeNumber(secText,sec);
+		displayCharcter(progressText,progressString,progressStringLength);
 		isAnime=true;
 	} else {
 		appendNumber(daysText,day);
@@ -69,4 +73,15 @@ function animeNumber (element,count) {
 
 function appendNumber (element,number) {
 	element.innerHTML=number;
+}
+
+function displayCharcter (element,string,length) {
+	var i=1;
+	var timer=setInterval(function () {
+		element.innerHTML=string.slice(0, i);
+		if(i>=length){
+			clearInterval(timer);
+		}
+		i++;
+	},20);
 }
