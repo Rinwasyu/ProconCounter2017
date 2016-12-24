@@ -1,5 +1,20 @@
-@media screen and (max-width:800px){
+@media screen and (max-width:479px){
 	body{
-		text-align: center;
+		background-color: black;
+	}
+	p{
+		margin: 0px;
+		line-height: 36px;
+	}
+
+	#count-text{
+		color: white;
+		font-size: 32px;
+		font-family: 'Bungee Hairline', cursive;
+	}
+	#your-progress{
+		color: white;
+		font-size: 32px;
+		font-family: 'Bungee Hairline', cursive;
 	}
 }
