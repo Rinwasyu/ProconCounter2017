@@ -8,6 +8,8 @@ var progressStringLength=progressString.length;
 
 var isAnime=false;
 
+setTimeout(displayCharcter,1500,progressText,progressString,progressStringLength);
+
 setInterval(function () {
 	var date=new Date();
 	var proconDate=new Date(2017,9,7,0,0,0);
@@ -75,6 +77,7 @@ function appendNumber (element,number) {
 }
 
 function displayCharcter (element,string,length) {
+	console.log('displayCharcter');
 	var i=1;
 	var timer=setInterval(function () {
 		element.innerHTML=string.slice(0, i);
