@@ -45,7 +45,6 @@ setInterval(function () {
 		animeNumber(hourText,hour);
 		animeNumber(minText,min);
 		animeNumber(secText,sec);
-		displayCharcter(progressText,progressString,progressStringLength);
 		isAnime=true;
 	} else {
 		appendNumber(daysText,day);
@@ -60,7 +59,7 @@ function animeNumber (element,count) {
 	var interval=10;
 	if(count>100){
 		interval=1;
-		i=90;
+		i=count-100;
 	}
 	var timer=setInterval(function () {
 		element.innerHTML=i;
@@ -85,3 +84,5 @@ function displayCharcter (element,string,length) {
 		i++;
 	},20);
 }
+
+// progressText.addEventListener('onClick',console.log('event'));
