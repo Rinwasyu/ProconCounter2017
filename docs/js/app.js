@@ -2,6 +2,7 @@ var daysText=document.getElementById('days-text');
 var hourText=document.getElementById('hour-text');
 var minText=document.getElementById('min-text');
 var secText=document.getElementById('sec-text');
+var millsecText=document.getElementById('millsec-text');
 var progressText=document.getElementById('your-progress');
 var progressString='How is your progressing?';
 var progressStringLength=progressString.length;
@@ -38,23 +39,30 @@ setInterval(function () {
 	}
 
 	sec=~~(milliSec/1000);
+	milliSec-=sec*1000;
 	if(sec<10){
 		sec='0'+sec;
 	}
+	milliSec=~~(milliSec/100);
+	// if(milliSec<10){
+	// 	milliSec='0'+milliSec;
+	// }
 
 	if (!isAnime) {
 		animeNumber(daysText,day);
 		animeNumber(hourText,hour);
 		animeNumber(minText,min);
 		animeNumber(secText,sec);
+		animeNumber(millsecText,milliSec);
 		isAnime=true;
 	} else {
 		appendNumber(daysText,day);
 		appendNumber(hourText,hour);
 		appendNumber(minText,min);
 		appendNumber(secText,sec);
+		appendNumber(millsecText,milliSec);
 	}
-},1000);
+},100);
 
 function animeNumber (element,count) {
 	var i=0;
