@@ -44,16 +44,12 @@ setInterval(function () {
 		sec='0'+sec;
 	}
 	milliSec=~~(milliSec/100);
-	// if(milliSec<10){
-	// 	milliSec='0'+milliSec;
-	// }
 
 	if (!isAnime) {
 		animeNumber(daysText,day);
 		animeNumber(hourText,hour);
 		animeNumber(minText,min);
 		animeNumber(secText,sec);
-		animeNumber(millsecText,milliSec);
 		isAnime=true;
 	} else {
 		appendNumber(daysText,day);
