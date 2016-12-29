@@ -5,9 +5,23 @@ var secText=document.getElementById('sec-text');
 var millsecText=document.getElementById('millsec-text');
 var progressText=document.getElementById('your-progress');
 var progressString='How is your progressing?';
+var droppedString='Dropped!!! I dropped github!!!';
 var progressStringLength=progressString.length;
+var droppedStringLenght=droppedString.length;
 
 var isAnime=false;
+var isdropped=false;
+
+setInterval(function(){
+	if(isdropped){
+		displayCharcter(progressText,progressString,progressStringLength);
+		isdropped=false;
+	}
+	else{
+		displayCharcter(progressText,droppedString,droppedStringLenght);
+		isdropped=true;
+	}
+},5*1000);
 
 setTimeout(displayCharcter,1500,progressText,progressString,progressStringLength);
 
@@ -91,5 +105,3 @@ function displayCharcter (element,string,length) {
 		i++;
 	},20);
 }
-
-// progressText.addEventListener('onClick',console.log('event'));
