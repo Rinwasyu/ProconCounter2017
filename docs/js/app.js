@@ -3,27 +3,13 @@ var hourText=document.getElementById('hour-text');
 var minText=document.getElementById('min-text');
 var secText=document.getElementById('sec-text');
 var millsecText=document.getElementById('millsec-text');
-var progressText=document.getElementById('your-progress');
-var progressString='How is your progressing?';
-var droppedString='Dropped!!! I dropped github!!!';
-var progressStringLength=progressString.length;
-var droppedStringLenght=droppedString.length;
+var messageText=document.getElementById('message');
+var message=getMessage();
+var messageLength=message.length;
 
 var isAnime=false;
-var isdropped=false;
 
-setInterval(function(){
-	if(isdropped){
-		displayCharcter(progressText,progressString,progressStringLength);
-		isdropped=false;
-	}
-	else{
-		displayCharcter(progressText,droppedString,droppedStringLenght);
-		isdropped=true;
-	}
-},5*1000);
-
-setTimeout(displayCharcter,1500,progressText,progressString,progressStringLength);
+setTimeout(displayCharcter,1500,messageText,message,messageLength);
 
 setInterval(function () {
 	var date=new Date();
@@ -95,7 +81,6 @@ function appendNumber (element,number) {
 }
 
 function displayCharcter (element,string,length) {
-	console.log('displayCharcter');
 	var i=1;
 	var timer=setInterval(function () {
 		element.innerHTML=string.slice(0, i);
@@ -104,4 +89,16 @@ function displayCharcter (element,string,length) {
 		}
 		i++;
 	},20);
+}
+function getMessage(){
+	var url = document.location.href;
+	var args = url.split('?');
+	if (args.length > 1) {
+		var message = args[1];
+		if (message != '') {
+			console.log(message);
+			return message;
+		}
+	}
+	return 'How is your progressing?';
 }
