@@ -91,7 +91,7 @@ function displayCharcter (element,string,length) {
 	},20);
 }
 function getMessage(){
-	var url = document.location.href;
+	var url = decURL(document.location.href);
 	var args = url.split('?');
 	if (args.length > 1) {
 		var message = args[1];
@@ -101,4 +101,8 @@ function getMessage(){
 		}
 	}
 	return 'How is your progressing?';
+}
+function decURL (url) {
+	var decUrl=decodeURI(url);
+	return decUrl;
 }
