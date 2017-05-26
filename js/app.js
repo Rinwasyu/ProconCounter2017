@@ -83,7 +83,7 @@ function appendNumber (element,number) {
 function displayCharcter (element,string,length) {
 	var i=1;
 	var timer=setInterval(function () {
-		element.innerHTML=string.slice(0, i);
+		element.textContent=string.slice(0, i);
 		if(i>=length){
 			clearInterval(timer);
 		}
