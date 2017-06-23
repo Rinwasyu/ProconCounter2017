@@ -13,7 +13,7 @@ setTimeout(displayCharcter,1500,messageText,message,messageLength);
 
 setInterval(function () {
 	var date=new Date();
-	var proconDate=new Date(2017,9,7,0,0,0);
+	var proconDate=new Date(2017,9,8,0,0,0);
 	var day,hour,min,sec;
 
 	var milliSec=proconDate.getTime()-date.getTime();
